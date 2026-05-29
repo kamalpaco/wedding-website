@@ -371,7 +371,7 @@ h1, h2, h3 {
 .about__text .section__title {
   text-align: left;
   font-size: clamp(2.4rem, 5vw, 3.4rem);
-  line-height: 1.05;
+  line-height: 1.2;
   margin-bottom: 1.5rem;
 }
 
@@ -469,7 +469,7 @@ h1, h2, h3 {
   font-family: var(--font-display);
   font-weight: 400;
   font-size: clamp(2.4rem, 6vw, 3.6rem);
-  line-height: 1.1;
+  line-height: 1.2;
   margin-bottom: 1.25rem;
 }
 .section__title--light { color: var(--crema); }
@@ -809,54 +809,6 @@ h1, h2, h3 {
 
 .btn--whatsapp { font-size: 0.9rem; padding: 1.1rem 2rem; }
 
-/* ============ FAQ ============ */
-.section--faq { background: var(--crema); padding-bottom: 5rem; }
-.faq {
-  max-width: 680px;
-  margin: 1.5rem auto 0;
-  text-align: left;
-}
-.faq details {
-  background: var(--blanco);
-  border: 1px solid rgba(184,118,62,0.15);
-  border-radius: var(--radius);
-  padding: 1.25rem 1.5rem;
-  margin-bottom: 0.75rem;
-  transition: box-shadow .25s ease, border-color .25s ease;
-}
-.faq details[open] {
-  box-shadow: var(--shadow-sm);
-  border-color: rgba(184,118,62,0.35);
-}
-.faq summary {
-  font-family: var(--font-serif);
-  font-size: 1.15rem;
-  font-weight: 500;
-  color: var(--marron);
-  cursor: pointer;
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-}
-.faq summary::-webkit-details-marker { display: none; }
-.faq summary::after {
-  content: "+";
-  font-family: var(--font-serif);
-  font-size: 1.6rem;
-  color: var(--mostaza);
-  line-height: 1;
-  transition: transform .25s ease;
-}
-.faq details[open] summary::after { transform: rotate(45deg); }
-.faq p {
-  margin: 0.75rem 0 0;
-  color: var(--marron-soft);
-  font-size: 0.95rem;
-  line-height: 1.65;
-}
-
 /* ============ FOOTER ============ */
 .footer {
   background: var(--marron);
@@ -922,6 +874,7 @@ h1, h2, h3 {
   .hero__amp::after  { margin-left: 10px; }
   .hero__date { letter-spacing: 0.1em; }
   .hero__cta { padding: 0.9rem 2rem; font-size: 0.78rem; letter-spacing: 0.2em; }
+  .hero__scroll { display: none; }
 
   .section--about { padding: 4rem 1.25rem; }
   .about { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
@@ -948,11 +901,16 @@ h1, h2, h3 {
   .map-card__info h3 { font-size: 1.8rem; }
   .btn { align-self: center; }
 
-  .timeline::before { left: 56px; }
-  .timeline__item { grid-template-columns: 60px 1fr; gap: 1rem; }
-  .timeline__item::before { left: 49px; }
-  .timeline__time { font-size: 1.2rem; }
-  .timeline__body { padding-left: 1rem; }
+  .timeline { max-width: 480px; }
+  .timeline::before { left: 7px; }
+  .timeline__item {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
+    padding: 1rem 0 1rem 2.25rem;
+  }
+  .timeline__item::before { left: 0; top: 1.35rem; }
+  .timeline__time { text-align: left; font-size: 1.35rem; }
+  .timeline__body { padding-left: 0; }
 
   .footer__couple { font-size: 2rem; }
 }
